@@ -83,23 +83,43 @@
                         <label for="clientName" class="block text-sm font-medium text-gray-700 mb-1">9. 依頼元企業名</label>
                         <input type="text" id="clientName" name="clientName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
-                    <div>
-                        <label for="applicantName" class="block text-sm font-medium text-gray-700 mb-1">10. 申請者名</label>
-                        <input type="text" id="applicantName" name="applicantName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
-                    </div>
-                    <div>
-                        <label for="applicantNationality" class="block text-sm font-medium text-gray-700 mb-1">11. 申請者国籍</label>
-                        <input type="text" id="applicantNationality" name="applicantNationality" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">12. 今回対応する在留資格</label>
-                        <div class="flex items-center space-x-4">
-                            <label class="flex items-center"><input type="radio" name="visaType" value="認定" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">認定</span></label>
-                            <label class="flex items-center"><input type="radio" name="visaType" value="変更" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">変更</span></label>
-                            <label class="flex items-center"><input type="radio" name="visaType" value="更新" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">更新</span></label>
+                </div>
+                
+                <!-- 申請者情報（動的追加） -->
+                <div id="applicantsContainer" class="space-y-6 md:col-span-2">
+                    <div class="applicant-entry border-t pt-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">10. 申請者名</label>
+                                <input type="text" name="applicantName[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">11. 申請者国籍</label>
+                                <input type="text" name="applicantNationality[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">12. 今回対応する在留資格</label>
+                                <div class="flex items-center space-x-4">
+                                    <label class="flex items-center"><input type="radio" name="visaType[0]" value="認定" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">認定</span></label>
+                                    <label class="flex items-center"><input type="radio" name="visaType[0]" value="変更" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">変更</span></label>
+                                    <label class="flex items-center"><input type="radio" name="visaType[0]" value="更新" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">更新</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right mt-2">
+                            <button type="button" class="remove-applicant-btn text-red-500 hover:text-red-700 text-sm hidden">削除</button>
                         </div>
                     </div>
-                    <div>
+                </div>
+                <div class="md:col-span-2 text-right">
+                    <button type="button" id="addApplicantBtn" class="bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200 transition-colors duration-300">
+                        + 申請者を追加
+                    </button>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:col-span-2">
+                     <div>
                         <label for="supportFee" class="block text-sm font-medium text-gray-700 mb-1">13. 支援料</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">¥</span>
@@ -177,18 +197,30 @@
                 <legend class="text-xl font-semibold text-gray-700 -mt-11 px-2 bg-white">窓口担当者情報</legend>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="contactName" class="block text-sm font-medium text-gray-700 mb-1">19. 窓口担当者名</label>
-                        <input type="text" id="contactName" name="contactName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">19. 窓口担当者</label>
+                        <div class="flex items-center space-x-4 mb-2">
+                             <label class="flex items-center"><input type="radio" name="contactPersonType" value="登録支援機関" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">登録支援機関</span></label>
+                             <label class="flex items-center"><input type="radio" name="contactPersonType" value="企業へ直接" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">企業へ直接</span></label>
+                        </div>
+                        <input type="text" id="contactName" name="contactName" placeholder="担当者名を入力" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">20. 窓口担当者連絡先</label>
                         <div class="flex items-center space-x-4 mb-2">
                             <label class="flex items-center"><input type="radio" name="contactMethod" value="電話" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">電話</span></label>
                             <label class="flex items-center"><input type="radio" name="contactMethod" value="LINE" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">LINE</span></label>
+                            <label class="flex items-center"><input type="radio" name="contactMethod" value="メール" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">メール</span></label>
                         </div>
                         <input type="text" id="contactDetail" name="contactDetail" placeholder="電話番号を入力" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                 </div>
+            </fieldset>
+
+            <!-- 備考欄 -->
+            <fieldset class="space-y-2 border-t pt-6">
+                 <legend class="text-xl font-semibold text-gray-700 -mt-11 px-2 bg-white">備考欄</legend>
+                 <label for="remarks" class="block text-sm font-medium text-gray-700">何か補足事項があればご記入ください。</label>
+                 <textarea id="remarks" name="remarks" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"></textarea>
             </fieldset>
 
             <!-- 送信ボタン -->
@@ -204,7 +236,7 @@
     <div id="resultModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden modal-backdrop">
         <div class="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-8 modal-content transform scale-95">
             <div class="flex justify-between items-center border-b pb-4">
-                <h2 class="text-2xl font-bold text-gray-800">入力内容の確認</h2>
+                <h2 id="modalTitle" class="text-2xl font-bold text-gray-800">入力内容の確認</h2>
                 <button id="closeModal" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
             </div>
             <div id="modalContent" class="mt-6 space-y-4 text-gray-700">
@@ -225,6 +257,7 @@
             const contactMethodRadios = document.querySelectorAll('input[name="contactMethod"]');
             const contactDetailInput = document.getElementById('contactDetail');
             const resultModal = document.getElementById('resultModal');
+            const modalTitle = document.getElementById('modalTitle');
             const modalContent = document.getElementById('modalContent');
             const closeModalButton = document.getElementById('closeModal');
             const closeModalFooterButton = document.getElementById('closeModalFooter');
@@ -234,16 +267,49 @@
             const onlineScopeRadios = document.querySelectorAll('input[name="onlineScope"]');
             const onlineCredentialsDiv = document.getElementById('onlineCredentials');
 
+            const applicantsContainer = document.getElementById('applicantsContainer');
+            const addApplicantBtn = document.getElementById('addApplicantBtn');
+            let applicantCount = 1;
+
             // 連絡先のプレースホルダーを動的に変更する処理
             contactMethodRadios.forEach(radio => {
                 radio.addEventListener('change', function () {
                     if (this.value === 'LINE') {
                         contactDetailInput.placeholder = 'LINE IDを入力';
+                    } else if (this.value === 'メール') {
+                        contactDetailInput.placeholder = 'メールアドレスを入力';
                     } else {
                         contactDetailInput.placeholder = '電話番号を入力';
                     }
                 });
             });
+
+            // 申請者を追加する処理
+            addApplicantBtn.addEventListener('click', function() {
+                const newApplicantEntry = applicantsContainer.children[0].cloneNode(true);
+                newApplicantEntry.querySelector('input[type="text"]').value = '';
+                newApplicantEntry.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.name = `visaType[${applicantCount}]`;
+                    radio.checked = false;
+                });
+                newApplicantEntry.querySelector('input[type="radio"]').checked = true; // Default to first option
+                
+                const removeBtn = newApplicantEntry.querySelector('.remove-applicant-btn');
+                removeBtn.classList.remove('hidden');
+                
+                applicantsContainer.appendChild(newApplicantEntry);
+                applicantCount++;
+            });
+
+            // 申請者を削除する処理 (イベント委任)
+            applicantsContainer.addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('remove-applicant-btn')) {
+                    if (applicantsContainer.children.length > 1) {
+                        e.target.closest('.applicant-entry').remove();
+                    }
+                }
+            });
+
 
             // オンライン申請のサブオプション表示を制御する関数
             const toggleOnlineOptions = () => {
@@ -293,9 +359,6 @@
                     supportManager: '7. 支援責任者',
                     supportStaff: '8. 支援担当者',
                     clientName: '9. 依頼元企業名',
-                    applicantName: '10. 申請者名',
-                    applicantNationality: '11. 申請者国籍',
-                    visaType: '12. 対応在留資格',
                     supportFee: '13. 支援料',
                     contractDate: '14. 契約締結日',
                     contractPeriod: '15. 契約期間',
@@ -305,20 +368,24 @@
                     onlineId: 'オンライン申請ID',
                     onlinePw: 'パスワード',
                     cardReceipt: '18. 在留カード受取方法',
+                    contactPersonType: '19. 窓口担当者種別',
                     contactName: '19. 窓口担当者名',
                     contactMethod: '20. 連絡先種別',
                     contactDetail: '20. 連絡先詳細',
+                    remarks: '備考欄'
                 };
                 
                 // 契約期間を結合
                 const contractStart = formData.get('contractStartDate');
                 const contractEnd = formData.get('contractEndDate');
                 const contractPeriod = (contractStart && contractEnd) ? `${contractStart} ～ ${contractEnd}` : '未入力';
+                
+                const formDataObject = Object.fromEntries(formData.entries());
 
                 // FormDataの各エントリをループして表示
                 for (let [key, value] of formData.entries()) {
-                    // 契約期間の個別フィールドはスキップ
-                    if (key === 'contractStartDate' || key === 'contractEndDate') continue;
+                     if (key.includes('applicant') || key.includes('visaType')) continue;
+                     if (key === 'contractStartDate' || key === 'contractEndDate') continue;
 
                     // 条件に応じて不要な項目をモーダルに表示しない
                     const applicationMethod = formData.get('applicationMethod');
@@ -333,7 +400,6 @@
                     const label = labels[key] || key;
                     let displayValue = value ? value : '未入力';
 
-                    // パスワードは表示しない
                     if (key === 'onlinePw' && value) {
                         displayValue = '********';
                     }
@@ -344,6 +410,16 @@
                     `;
                 }
                 
+                // 申請者情報を表示
+                const applicantNames = formData.getAll('applicantName[]');
+                const applicantNationalities = formData.getAll('applicantNationality[]');
+                applicantNames.forEach((name, index) => {
+                    contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-3 pt-2 border-t mt-2">申請者 ${index + 1}</dt>`;
+                    contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">10. 申請者名</dt><dd class="text-gray-600 md:col-span-2">${name || '未入力'}</dd>`;
+                    contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">11. 申請者国籍</dt><dd class="text-gray-600 md:col-span-2">${applicantNationalities[index] || '未入力'}</dd>`;
+                    contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">12. 対応在留資格</dt><dd class="text-gray-600 md:col-span-2">${formData.get(`visaType[${index}]`) || '未入力'}</dd>`;
+                });
+
                 // 結合した契約期間を追加
                 contentHTML += `
                     <dt class="font-semibold text-gray-800 md:col-span-1">${labels.contractPeriod}</dt>
@@ -351,6 +427,7 @@
                 `;
 
                 contentHTML += '</dl>';
+                modalTitle.textContent = '入力内容の確認';
                 modalContent.innerHTML = contentHTML;
 
                 // モーダルを表示
@@ -370,18 +447,22 @@
                 }).then(response => {
                     if (response.ok) {
                         console.log('フォームは正常に送信されました。');
-                        // ここで成功メッセージをモーダル内に表示することも可能
+                        modalTitle.textContent = '送信完了';
+                        modalContent.innerHTML = '<p class="text-center text-lg text-green-600 font-semibold">送信しました</p>';
                     } else {
                         response.json().then(data => {
                             if (Object.hasOwn(data, 'errors')) {
                                 console.error(data["errors"].map(error => error["message"]).join(", "));
+                                modalContent.innerHTML += `<p class="text-red-500 mt-4">送信に失敗しました: ${data["errors"].map(error => error["message"]).join(", ")}</p>`;
                             } else {
                                 console.error('フォームの送信中にエラーが発生しました。');
+                                modalContent.innerHTML += `<p class="text-red-500 mt-4">送信中に不明なエラーが発生しました。</p>`;
                             }
                         })
                     }
                 }).catch(error => {
                     console.error('ネットワークエラー:', error);
+                    modalContent.innerHTML += `<p class="text-red-500 mt-4">ネットワークエラーが発生しました。接続を確認してください。</p>`;
                 });
             });
 
