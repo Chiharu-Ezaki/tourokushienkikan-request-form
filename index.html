@@ -20,68 +20,68 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-2 sm:p-4 lg:p-8">
 
-    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-8 sm:p-10 space-y-8">
+    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-4 sm:p-8 space-y-6 sm:space-y-8">
         <div class="text-center">
-            <h1 class="text-3xl font-bold text-gray-800">書類作成依頼 アンケートフォーム</h1>
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-800">書類作成依頼 アンケートフォーム</h1>
             <p class="mt-2 text-gray-600">取引先様からの書類作成依頼に関する情報をご入力ください。</p>
         </div>
 
         <form id="requestForm" class="space-y-10" action="https://formspree.io/f/xpwjwnje" method="POST">
             <!-- 登録支援機関情報 -->
             <fieldset class="space-y-6 border-t pt-6">
-                <legend class="text-xl font-semibold text-gray-700 -mt-11 px-2 bg-white">登録支援機関情報</legend>
+                <legend class="text-lg sm:text-xl font-semibold text-gray-700 -mt-10 sm:-mt-11 px-2 bg-white">登録支援機関情報</legend>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="orgName" class="block text-sm font-medium text-gray-700 mb-1">1. 登録支援機関名</label>
-                        <input type="text" id="orgName" name="orgName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="orgName" name="登録支援機関名" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label for="orgAddress" class="block text-sm font-medium text-gray-700 mb-1">2. 住所</label>
-                        <input type="text" id="orgAddress" name="orgAddress" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="orgAddress" name="住所" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label for="orgPhone" class="block text-sm font-medium text-gray-700 mb-1">3. 電話番号</label>
-                        <input type="tel" id="orgPhone" name="orgPhone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="tel" id="orgPhone" name="電話番号" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label for="orgRegNumber" class="block text-sm font-medium text-gray-700 mb-1">4. 登録支援登録番号</label>
-                        <input type="text" id="orgRegNumber" name="orgRegNumber" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="orgRegNumber" name="登録支援登録番号" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label for="orgRegDate" class="block text-sm font-medium text-gray-700 mb-1">5. 登録支援登録日</label>
-                        <input type="date" id="orgRegDate" name="orgRegDate" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="date" id="orgRegDate" name="登録支援登録日" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                 </div>
             </fieldset>
 
             <!-- 支援状況 -->
             <fieldset class="space-y-6 border-t pt-6">
-                <legend class="text-xl font-semibold text-gray-700 -mt-11 px-2 bg-white">支援状況</legend>
+                <legend class="text-lg sm:text-xl font-semibold text-gray-700 -mt-10 sm:-mt-11 px-2 bg-white">支援状況</legend>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                         <label for="supportCount" class="block text-sm font-medium text-gray-700 mb-1">6. 現在の支援人数</label>
-                        <input type="number" id="supportCount" name="supportCount" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="number" id="supportCount" name="現在の支援人数" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label for="supportManager" class="block text-sm font-medium text-gray-700 mb-1">7. 支援責任者</label>
-                        <input type="text" id="supportManager" name="supportManager" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="supportManager" name="支援責任者" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label for="supportStaff" class="block text-sm font-medium text-gray-700 mb-1">8. 支援担当者</label>
-                        <input type="text" id="supportStaff" name="supportStaff" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="supportStaff" name="支援担当者" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                 </div>
             </fieldset>
 
             <!-- 依頼内容 -->
             <fieldset class="space-y-6 border-t pt-6">
-                <legend class="text-xl font-semibold text-gray-700 -mt-11 px-2 bg-white">依頼内容</legend>
+                <legend class="text-lg sm:text-xl font-semibold text-gray-700 -mt-10 sm:-mt-11 px-2 bg-white">依頼内容</legend>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="md:col-span-2">
                         <label for="clientName" class="block text-sm font-medium text-gray-700 mb-1">9. 依頼元企業名</label>
-                        <input type="text" id="clientName" name="clientName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="clientName" name="依頼元企業名" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                 </div>
                 
@@ -91,18 +91,18 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">10. 申請者名</label>
-                                <input type="text" name="applicantName[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                                <input type="text" name="申請者名[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-1">11. 申請者国籍</label>
-                                <input type="text" name="applicantNationality[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                                <input type="text" name="申請者国籍[]" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div class="md:col-span-2">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">12. 今回対応する在留資格</label>
                                 <div class="flex items-center space-x-4">
-                                    <label class="flex items-center"><input type="radio" name="visaType[0]" value="認定" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">認定</span></label>
-                                    <label class="flex items-center"><input type="radio" name="visaType[0]" value="変更" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">変更</span></label>
-                                    <label class="flex items-center"><input type="radio" name="visaType[0]" value="更新" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">更新</span></label>
+                                    <label class="flex items-center"><input type="radio" name="在留資格[0]" value="認定" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">認定</span></label>
+                                    <label class="flex items-center"><input type="radio" name="在留資格[0]" value="変更" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">変更</span></label>
+                                    <label class="flex items-center"><input type="radio" name="在留資格[0]" value="更新" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">更新</span></label>
                                 </div>
                             </div>
                         </div>
@@ -123,48 +123,44 @@
                         <label for="supportFee" class="block text-sm font-medium text-gray-700 mb-1">13. 支援料</label>
                         <div class="relative">
                             <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">¥</span>
-                            <input type="number" id="supportFee" name="supportFee" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            <input type="number" id="supportFee" name="支援料" class="w-full pl-8 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                         </div>
                     </div>
                     <div>
                         <label for="contractDate" class="block text-sm font-medium text-gray-700 mb-1">14. 支援委託契約書の締結日</label>
-                        <input type="date" id="contractDate" name="contractDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="date" id="contractDate" name="支援委託契約書の締結日" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">15. 支援委託契約期間</label>
                         <div class="flex items-center space-x-2">
-                            <input type="date" id="contractStartDate" name="contractStartDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            <input type="date" id="contractStartDate" name="支援委託契約期間（開始）" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                             <span>～</span>
-                            <input type="date" id="contractEndDate" name="contractEndDate" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            <input type="date" id="contractEndDate" name="支援委託契約期間（終了）" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                         </div>
-                    </div>
-                    <div>
-                        <label for="deadline" class="block text-sm font-medium text-gray-700 mb-1">16. 〆切</label>
-                        <input type="date" id="deadline" name="deadline" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">17. 申請方法</label>
                         <div class="flex items-center space-x-4">
                             <label class="flex items-center">
-                                <input type="radio" name="applicationMethod" value="オンライン" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked>
+                                <input type="radio" name="申請方法" value="オンライン" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked>
                                 <span class="ml-2">オンライン</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="radio" name="applicationMethod" value="窓口申請" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                <input type="radio" name="申請方法" value="窓口申請" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
                                 <span class="ml-2">窓口申請</span>
                             </label>
                         </div>
                         <!-- オンライン選択時の追加項目 -->
                         <div id="onlineOptions" class="hidden mt-4 space-y-4">
                              <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">依頼範囲</label>
-                                <div class="flex items-center space-x-4">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">依頼範囲の選択</label>
+                                <div class="flex flex-col space-y-2">
                                     <label class="flex items-center">
-                                        <input type="radio" name="onlineScope" value="申請までを依頼" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                        <span class="ml-2">申請までを依頼</span>
+                                        <input type="radio" name="依頼範囲の選択" value="オンライン申請までを完了させる" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                        <span class="ml-2">オンライン申請までを完了させる</span>
                                     </label>
                                     <label class="flex items-center">
-                                        <input type="radio" name="onlineScope" value="書類作成のみ" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked>
+                                        <input type="radio" name="依頼範囲の選択" value="書類作成のみ" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked>
                                         <span class="ml-2">書類作成のみ</span>
                                     </label>
                                 </div>
@@ -173,11 +169,11 @@
                             <div id="onlineCredentials" class="hidden space-y-2">
                                 <div>
                                     <label for="onlineId" class="block text-sm font-medium text-gray-700 mb-1">オンライン申請ID</label>
-                                    <input type="text" id="onlineId" name="onlineId" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                                    <input type="text" id="onlineId" name="オンライン申請ID" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                                 </div>
                                 <div>
                                     <label for="onlinePw" class="block text-sm font-medium text-gray-700 mb-1">パスワード</label>
-                                    <input type="password" id="onlinePw" name="onlinePw" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                                    <input type="password" id="onlinePw" name="パスワード" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                                 </div>
                             </div>
                         </div>
@@ -185,8 +181,8 @@
                     <div class="md:col-span-2">
                         <label class="block text-sm font-medium text-gray-700 mb-2">18. 在留カードの受取方法 <span class="text-xs text-gray-500">※認定申請を除く</span></label>
                         <div class="flex items-center space-x-4">
-                            <label class="flex items-center"><input type="radio" name="cardReceipt" value="郵送" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">郵送</span></label>
-                            <label class="flex items-center"><input type="radio" name="cardReceipt" value="入管で直接受取" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">入管で直接受取</span></label>
+                            <label class="flex items-center"><input type="radio" name="在留カードの受取方法" value="郵送" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">郵送</span></label>
+                            <label class="flex items-center"><input type="radio" name="在留カードの受取方法" value="入管で直接受取" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">入管で直接受取</span></label>
                         </div>
                     </div>
                 </div>
@@ -194,33 +190,33 @@
 
             <!-- 窓口担当者情報 -->
             <fieldset class="space-y-6 border-t pt-6">
-                <legend class="text-xl font-semibold text-gray-700 -mt-11 px-2 bg-white">窓口担当者情報</legend>
+                <legend class="text-lg sm:text-xl font-semibold text-gray-700 -mt-10 sm:-mt-11 px-2 bg-white">窓口担当者情報</legend>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">19. 窓口担当者</label>
                         <div class="flex items-center space-x-4 mb-2">
-                             <label class="flex items-center"><input type="radio" name="contactPersonType" value="登録支援機関" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">登録支援機関</span></label>
-                             <label class="flex items-center"><input type="radio" name="contactPersonType" value="企業へ直接" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">企業へ直接</span></label>
+                             <label class="flex items-center"><input type="radio" name="窓口担当者" value="登録支援機関" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">登録支援機関</span></label>
+                             <label class="flex items-center"><input type="radio" name="窓口担当者" value="企業へ直接" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">企業へ直接</span></label>
                         </div>
-                        <input type="text" id="contactName" name="contactName" placeholder="担当者名を入力" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="contactName" name="担当者名" placeholder="担当者名を入力" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">20. 窓口担当者連絡先</label>
                         <div class="flex items-center space-x-4 mb-2">
-                            <label class="flex items-center"><input type="radio" name="contactMethod" value="電話" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">電話</span></label>
-                            <label class="flex items-center"><input type="radio" name="contactMethod" value="LINE" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">LINE</span></label>
-                            <label class="flex items-center"><input type="radio" name="contactMethod" value="メール" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">メール</span></label>
+                            <label class="flex items-center"><input type="radio" name="窓口担当者連絡先" value="電話" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked> <span class="ml-2">電話</span></label>
+                            <label class="flex items-center"><input type="radio" name="窓口担当者連絡先" value="LINE" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">LINE</span></label>
+                            <label class="flex items-center"><input type="radio" name="窓口担当者連絡先" value="メール" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"> <span class="ml-2">メール</span></label>
                         </div>
-                        <input type="text" id="contactDetail" name="contactDetail" placeholder="電話番号を入力" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <input type="text" id="contactDetail" name="連絡先詳細" placeholder="電話番号を入力" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
                 </div>
             </fieldset>
 
             <!-- 備考欄 -->
             <fieldset class="space-y-2 border-t pt-6">
-                 <legend class="text-xl font-semibold text-gray-700 -mt-11 px-2 bg-white">備考欄</legend>
+                 <legend class="text-lg sm:text-xl font-semibold text-gray-700 -mt-10 sm:-mt-11 px-2 bg-white">備考欄</legend>
                  <label for="remarks" class="block text-sm font-medium text-gray-700">何か補足事項があればご記入ください。</label>
-                 <textarea id="remarks" name="remarks" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                 <textarea id="remarks" name="備考欄" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"></textarea>
             </fieldset>
 
             <!-- 送信ボタン -->
@@ -230,6 +226,22 @@
                 </button>
             </div>
         </form>
+    </div>
+
+    <!-- 確認モーダル -->
+    <div id="confirmModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden modal-backdrop">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 modal-content transform scale-95 opacity-0">
+            <h2 class="text-xl font-bold text-gray-800 text-center">確認</h2>
+            <p class="mt-4 text-center text-gray-600">送信してもよろしいですか？</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <button id="confirmCancel" class="bg-gray-200 text-gray-800 font-bold py-2 px-6 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+                    いいえ
+                </button>
+                <button id="confirmOk" class="bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                    はい
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- 結果表示モーダル -->
@@ -254,19 +266,21 @@
         document.addEventListener('DOMContentLoaded', function () {
             // フォームとモーダルの要素を取得
             const form = document.getElementById('requestForm');
-            const contactMethodRadios = document.querySelectorAll('input[name="contactMethod"]');
-            const contactDetailInput = document.getElementById('contactDetail');
             const resultModal = document.getElementById('resultModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalContent = document.getElementById('modalContent');
             const closeModalButton = document.getElementById('closeModal');
             const closeModalFooterButton = document.getElementById('closeModalFooter');
+            const confirmModal = document.getElementById('confirmModal');
+            const confirmOkButton = document.getElementById('confirmOk');
+            const confirmCancelButton = document.getElementById('confirmCancel');
             
-            const applicationMethodRadios = document.querySelectorAll('input[name="applicationMethod"]');
+            const contactMethodRadios = document.querySelectorAll('input[name="窓口担当者連絡先"]');
+            const contactDetailInput = document.getElementById('contactDetail');
+            const applicationMethodRadios = document.querySelectorAll('input[name="申請方法"]');
             const onlineOptionsDiv = document.getElementById('onlineOptions');
-            const onlineScopeRadios = document.querySelectorAll('input[name="onlineScope"]');
+            const onlineScopeRadios = document.querySelectorAll('input[name="依頼範囲の選択"]');
             const onlineCredentialsDiv = document.getElementById('onlineCredentials');
-
             const applicantsContainer = document.getElementById('applicantsContainer');
             const addApplicantBtn = document.getElementById('addApplicantBtn');
             let applicantCount = 1;
@@ -287,9 +301,11 @@
             // 申請者を追加する処理
             addApplicantBtn.addEventListener('click', function() {
                 const newApplicantEntry = applicantsContainer.children[0].cloneNode(true);
-                newApplicantEntry.querySelector('input[type="text"]').value = '';
+                newApplicantEntry.querySelector('input[name="申請者名[]"]').value = '';
+                newApplicantEntry.querySelector('input[name="申請者国籍[]"]').value = '';
+
                 newApplicantEntry.querySelectorAll('input[type="radio"]').forEach(radio => {
-                    radio.name = `visaType[${applicantCount}]`;
+                    radio.name = `在留資格[${applicantCount}]`;
                     radio.checked = false;
                 });
                 newApplicantEntry.querySelector('input[type="radio"]').checked = true; // Default to first option
@@ -310,24 +326,23 @@
                 }
             });
 
-
             // オンライン申請のサブオプション表示を制御する関数
             const toggleOnlineOptions = () => {
-                const selectedMethod = document.querySelector('input[name="applicationMethod"]:checked').value;
+                const selectedMethod = document.querySelector('input[name="申請方法"]:checked').value;
                 if (selectedMethod === 'オンライン') {
                     onlineOptionsDiv.classList.remove('hidden');
-                    toggleOnlineCredentials(); // 依頼範囲の選択状態に応じてID/PW欄の表示も更新
+                    toggleOnlineCredentials();
                 } else {
                     onlineOptionsDiv.classList.add('hidden');
-                    onlineCredentialsDiv.classList.add('hidden'); // オンラインでないならID/PW欄も隠す
+                    onlineCredentialsDiv.classList.add('hidden');
                 }
             };
 
             // オンライン申請のID/PW欄の表示を制御する関数
             const toggleOnlineCredentials = () => {
-                if (document.querySelector('input[name="applicationMethod"]:checked').value === 'オンライン') {
-                    const selectedScope = document.querySelector('input[name="onlineScope"]:checked').value;
-                    if (selectedScope === '申請までを依頼') {
+                if (document.querySelector('input[name="申請方法"]:checked').value === 'オンライン') {
+                    const selectedScope = document.querySelector('input[name="依頼範囲の選択"]:checked').value;
+                    if (selectedScope === 'オンライン申請までを完了させる') {
                         onlineCredentialsDiv.classList.remove('hidden');
                     } else {
                         onlineCredentialsDiv.classList.add('hidden');
@@ -335,155 +350,138 @@
                 }
             };
 
-            // イベントリスナーを設定
             applicationMethodRadios.forEach(radio => radio.addEventListener('change', toggleOnlineOptions));
             onlineScopeRadios.forEach(radio => radio.addEventListener('change', toggleOnlineCredentials));
-
-            // ページ読み込み時に初期状態を設定
             toggleOnlineOptions();
 
-            // フォーム送信時の処理
-            form.addEventListener('submit', function (event) {
-                event.preventDefault(); // デフォルトの送信をキャンセル
-
+            // 実際のフォーム送信処理
+            const processAndSubmitForm = () => {
                 const formData = new FormData(form);
                 let contentHTML = '<dl class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">';
 
                 const labels = {
-                    orgName: '1. 登録支援機関名',
-                    orgAddress: '2. 住所',
-                    orgPhone: '3. 電話番号',
-                    orgRegNumber: '4. 登録支援登録番号',
-                    orgRegDate: '5. 登録支援登録日',
-                    supportCount: '6. 現在の支援人数',
-                    supportManager: '7. 支援責任者',
-                    supportStaff: '8. 支援担当者',
-                    clientName: '9. 依頼元企業名',
-                    supportFee: '13. 支援料',
-                    contractDate: '14. 契約締結日',
-                    contractPeriod: '15. 契約期間',
-                    deadline: '16. 〆切',
-                    applicationMethod: '17. 申請方法',
-                    onlineScope: '依頼範囲',
-                    onlineId: 'オンライン申請ID',
-                    onlinePw: 'パスワード',
-                    cardReceipt: '18. 在留カード受取方法',
-                    contactPersonType: '19. 窓口担当者種別',
-                    contactName: '19. 窓口担当者名',
-                    contactMethod: '20. 連絡先種別',
-                    contactDetail: '20. 連絡先詳細',
-                    remarks: '備考欄'
+                    '登録支援機関名': '1. 登録支援機関名',
+                    '住所': '2. 住所',
+                    '電話番号': '3. 電話番号',
+                    '登録支援登録番号': '4. 登録支援登録番号',
+                    '登録支援登録日': '5. 登録支援登録日',
+                    '現在の支援人数': '6. 現在の支援人数',
+                    '支援責任者': '7. 支援責任者',
+                    '支援担当者': '8. 支援担当者',
+                    '依頼元企業名': '9. 依頼元企業名',
+                    '支援料': '13. 支援料',
+                    '支援委託契約書の締結日': '14. 契約締結日',
+                    'contractPeriod': '15. 契約期間', // This is special
+                    '申請方法': '17. 申請方法',
+                    '依頼範囲の選択': '依頼範囲',
+                    'オンライン申請ID': 'オンライン申請ID',
+                    'パスワード': 'パスワード',
+                    '在留カードの受取方法': '18. 在留カード受取方法',
+                    '窓口担当者': '19. 窓口担当者種別',
+                    '担当者名': '19. 窓口担当者名',
+                    '窓口担当者連絡先': '20. 連絡先種別',
+                    '連絡先詳細': '20. 連絡先詳細',
+                    '備考欄': '備考欄'
                 };
                 
-                // 契約期間を結合
-                const contractStart = formData.get('contractStartDate');
-                const contractEnd = formData.get('contractEndDate');
+                const contractStart = formData.get('支援委託契約期間（開始）');
+                const contractEnd = formData.get('支援委託契約期間（終了）');
                 const contractPeriod = (contractStart && contractEnd) ? `${contractStart} ～ ${contractEnd}` : '未入力';
                 
-                const formDataObject = Object.fromEntries(formData.entries());
-
-                // FormDataの各エントリをループして表示
                 for (let [key, value] of formData.entries()) {
-                     if (key.includes('applicant') || key.includes('visaType')) continue;
-                     if (key === 'contractStartDate' || key === 'contractEndDate') continue;
+                     if (key.includes('申請者') || key.includes('在留資格')) continue;
+                     if (key === '支援委託契約期間（開始）' || key === '支援委託契約期間（終了）') continue;
 
-                    // 条件に応じて不要な項目をモーダルに表示しない
-                    const applicationMethod = formData.get('applicationMethod');
-                    if (applicationMethod !== 'オンライン' && ['onlineScope', 'onlineId', 'onlinePw'].includes(key)) {
-                        continue;
-                    }
-                    const onlineScope = formData.get('onlineScope');
-                    if (onlineScope !== '申請までを依頼' && ['onlineId', 'onlinePw'].includes(key)) {
-                        continue;
-                    }
+                    const applicationMethod = formData.get('申請方法');
+                    if (applicationMethod !== 'オンライン' && ['依頼範囲の選択', 'オンライン申請ID', 'パスワード'].includes(key)) continue;
+                    const onlineScope = formData.get('依頼範囲の選択');
+                    if (onlineScope !== 'オンライン申請までを完了させる' && ['オンライン申請ID', 'パスワード'].includes(key)) continue;
 
                     const label = labels[key] || key;
                     let displayValue = value ? value : '未入力';
+                    if (key === 'パスワード' && value) displayValue = '********';
 
-                    if (key === 'onlinePw' && value) {
-                        displayValue = '********';
-                    }
-
-                    contentHTML += `
-                        <dt class="font-semibold text-gray-800 md:col-span-1">${label}</dt>
-                        <dd class="text-gray-600 md:col-span-2">${displayValue}</dd>
-                    `;
+                    contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">${label}</dt><dd class="text-gray-600 md:col-span-2">${displayValue}</dd>`;
                 }
                 
-                // 申請者情報を表示
-                const applicantNames = formData.getAll('applicantName[]');
-                const applicantNationalities = formData.getAll('applicantNationality[]');
+                const applicantNames = formData.getAll('申請者名[]');
+                const applicantNationalities = formData.getAll('申請者国籍[]');
                 applicantNames.forEach((name, index) => {
                     contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-3 pt-2 border-t mt-2">申請者 ${index + 1}</dt>`;
                     contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">10. 申請者名</dt><dd class="text-gray-600 md:col-span-2">${name || '未入力'}</dd>`;
                     contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">11. 申請者国籍</dt><dd class="text-gray-600 md:col-span-2">${applicantNationalities[index] || '未入力'}</dd>`;
-                    contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">12. 対応在留資格</dt><dd class="text-gray-600 md:col-span-2">${formData.get(`visaType[${index}]`) || '未入力'}</dd>`;
+                    contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">12. 対応在留資格</dt><dd class="text-gray-600 md:col-span-2">${formData.get(`在留資格[${index}]`) || '未入力'}</dd>`;
                 });
 
-                // 結合した契約期間を追加
-                contentHTML += `
-                    <dt class="font-semibold text-gray-800 md:col-span-1">${labels.contractPeriod}</dt>
-                    <dd class="text-gray-600 md:col-span-2">${contractPeriod}</dd>
-                `;
-
-                contentHTML += '</dl>';
+                contentHTML += `<dt class="font-semibold text-gray-800 md:col-span-1">${labels.contractPeriod}</dt><dd class="text-gray-600 md:col-span-2">${contractPeriod}</dd></dl>`;
+                
                 modalTitle.textContent = '入力内容の確認';
                 modalContent.innerHTML = contentHTML;
+                showResultModal();
 
-                // モーダルを表示
-                resultModal.classList.remove('hidden');
-                setTimeout(() => {
-                    resultModal.querySelector('.modal-content').classList.remove('scale-95');
-                    resultModal.classList.remove('opacity-0');
-                }, 10);
-
-                // Formspreeへの非同期送信
                 fetch(form.action, {
                     method: form.method,
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 }).then(response => {
                     if (response.ok) {
-                        console.log('フォームは正常に送信されました。');
                         modalTitle.textContent = '送信完了';
                         modalContent.innerHTML = '<p class="text-center text-lg text-green-600 font-semibold">送信しました</p>';
                     } else {
                         response.json().then(data => {
-                            if (Object.hasOwn(data, 'errors')) {
-                                console.error(data["errors"].map(error => error["message"]).join(", "));
-                                modalContent.innerHTML += `<p class="text-red-500 mt-4">送信に失敗しました: ${data["errors"].map(error => error["message"]).join(", ")}</p>`;
-                            } else {
-                                console.error('フォームの送信中にエラーが発生しました。');
-                                modalContent.innerHTML += `<p class="text-red-500 mt-4">送信中に不明なエラーが発生しました。</p>`;
-                            }
+                            const errorMsg = data.errors ? data.errors.map(e => e.message).join(", ") : "不明なエラー";
+                            modalContent.innerHTML += `<p class="text-red-500 mt-4">送信に失敗しました: ${errorMsg}</p>`;
                         })
                     }
                 }).catch(error => {
-                    console.error('ネットワークエラー:', error);
-                    modalContent.innerHTML += `<p class="text-red-500 mt-4">ネットワークエラーが発生しました。接続を確認してください。</p>`;
+                    modalContent.innerHTML += `<p class="text-red-500 mt-4">ネットワークエラーが発生しました。</p>`;
                 });
-            });
-
-            // モーダルを閉じる関数
-            const closeModal = () => {
-                resultModal.querySelector('.modal-content').classList.add('scale-95');
-                resultModal.classList.add('opacity-0');
-                setTimeout(() => {
-                    resultModal.classList.add('hidden');
-                }, 300);
             };
 
-            // 閉じるボタンのイベントリスナー
-            closeModalButton.addEventListener('click', closeModal);
-            closeModalFooterButton.addEventListener('click', closeModal);
-            resultModal.addEventListener('click', (e) => {
-                if (e.target === resultModal) {
-                    closeModal();
-                }
+            // フォーム送信ボタンがクリックされたときの処理
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                showConfirmModal();
             });
+            
+            confirmOkButton.addEventListener('click', () => {
+                closeConfirmModal();
+                processAndSubmitForm();
+            });
+            
+            confirmCancelButton.addEventListener('click', closeConfirmModal);
+
+            // モーダル表示/非表示関数
+            function showConfirmModal() {
+                confirmModal.classList.remove('hidden');
+                setTimeout(() => {
+                    confirmModal.classList.remove('opacity-0');
+                    confirmModal.querySelector('.modal-content').classList.remove('scale-95');
+                }, 10);
+            }
+            function closeConfirmModal() {
+                confirmModal.classList.add('opacity-0');
+                confirmModal.querySelector('.modal-content').classList.add('scale-95');
+                setTimeout(() => confirmModal.classList.add('hidden'), 300);
+            }
+            function showResultModal() {
+                resultModal.classList.remove('hidden');
+                setTimeout(() => {
+                    resultModal.classList.remove('opacity-0');
+                    resultModal.querySelector('.modal-content').classList.remove('scale-95');
+                }, 10);
+            }
+            function closeResultModal() {
+                resultModal.classList.add('opacity-0');
+                resultModal.querySelector('.modal-content').classList.add('scale-95');
+                setTimeout(() => resultModal.classList.add('hidden'), 300);
+            }
+
+            closeModalButton.addEventListener('click', closeResultModal);
+            closeModalFooterButton.addEventListener('click', closeResultModal);
+            resultModal.addEventListener('click', (e) => e.target === resultModal && closeResultModal());
         });
     </script>
 </body>
 </html>
+
